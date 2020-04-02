@@ -6,4 +6,5 @@ Rails.application.routes.draw do
       end
     end
   end
+  resources :tickets, only: %i[index show]
 end

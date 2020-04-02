@@ -8,8 +8,7 @@ module Api
         def create
           ticket = ::Ticket.new(ticket_params)
           ticket.build_excavator(excavator_params)
-          return render_json_validation_error(ticket) unless ticket.save
-
+          ticket.save!
           render json: ticket, status: :created, serializer: serializer
         end
 
