@@ -1,0 +1,27 @@
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Request Number</th>
+      <th>SequenceNumber</th>
+      <th>RequestType</th>
+      <th>ResponseDueDateTime</th>
+      <th>Primary SA Code</th>
+      <th>Additional SA Codes</th>
+      <th></th>
+    </tr>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.id %></td>
+        <td><%= ticket.request_number %></td>
+        <td><%= ticket.sequence_number %></td>
+        <td><%= ticket.request_type %></td>
+        <td><%= ticket.response_due_date_time %></td>
+        <td><%= ticket.primary_sa_code %></td>
+        <td><%= ticket.additional_sa_codes %></td>
+        <td><%= %></td>
+        <td><%= link_to 'View', ticket_path(ticket) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

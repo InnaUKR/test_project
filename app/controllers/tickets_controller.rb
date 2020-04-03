@@ -5,5 +5,7 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find(params[:id])
+    @excavator = @ticket.excavator
+    @coordinates = @ticket.well_known_text.delete('POLYGON()').split(',').map(&:split)
   end
 end

@@ -1,0 +1,108 @@
+
+<% provide :head_tags do %>
+  <meta name='turbolinks-visit-control' content='reload'>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      initMap(<%=raw @coordinates%>)
+    });
+  </script>
+<% end %>
+
+
+<div>
+  <%= link_to 'Go Back', tickets_path%>
+  <h3>Tiket info</h3>
+  <div>
+    <p>
+      <span>
+        Id:
+      </span>
+      <%= @ticket.id %>
+    </p>
+    <p>
+      <span>
+        Request number:
+        <%= @ticket.request_number %>
+      </span>
+    </p>
+    <p>
+      <span>
+        Sequence number:
+      </span>
+      <%= @ticket.sequence_number %>
+    </p>
+    <p>
+      <span>
+        Request type:
+      </span>
+      <%= @ticket.request_type %>
+    </p>
+    <p>
+      <span>
+        Response due date time:
+      </span>
+      <%= @ticket.response_due_date_time %>
+    </p>
+    <p>
+      <span>
+        Primary service area code:
+      </span>
+      <%= @ticket.primary_sa_code %>
+    </p>
+    <p>
+      <span>
+        Additional service area codes:
+      </span>
+      <%= @ticket.additional_sa_codes %>
+    </p>
+    <span>
+      Dig site info:
+    </span>
+    <div id="map"></div>
+    <p>
+      <span>
+        Created at:
+      </span>
+      <%= @ticket.created_at %>
+    </p>
+    <p>
+      <span>
+        Updated at:
+      </span>
+      <%= @ticket.updated_at %>
+    </p>
+  </div>
+  <h3>Excavator:</h3>
+  <div>
+    <p>
+      <span>
+        Id:
+      </span>
+      <%= @excavator.id %>
+    </p>
+    <p>
+      <span>
+        Crew on site:
+      </span>
+      <%= @excavator.crew_onsite %>
+    </p>
+    <p>
+      <span>
+        Address:
+      </span>
+      <%= @excavator.full_address %>
+    </p>
+    <p>
+      <span>
+        Created at:
+      </span>
+      <%= @excavator.created_at %>
+    </p>
+    <p>
+      <span>
+        Updated at:
+      </span>
+      <%= @excavator.updated_at %>
+    </p>
+  </div>
+</div>
